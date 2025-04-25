@@ -11,7 +11,7 @@ public class GameBoard extends Frame {
         super("AWT TicTacToe");
         setLayout(new BorderLayout());
 
-        sLabel = new Label("Player 1's turn");
+        sLabel = new Label("Player X's turn");
         add(sLabel, BorderLayout.NORTH);
 
         Panel gridPanel = new Panel(new GridLayout(3, 3));
