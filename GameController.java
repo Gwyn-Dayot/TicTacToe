@@ -10,10 +10,12 @@ public class GameController implements ActionListener {
         this.directions = new TTTDir();
     }
 
+    @Override
+
     public void actionPerformed(ActionEvent e) {
         Button clicked = (Button) e.getSource();
-        if (!clicked.getLabel().equals(" "))
-        return;
+
+        if (!clicked.getLabel().equals("")) return;
 
         clicked.setLabel(String.valueOf(directions.getCurrentPlayer()));
 
@@ -48,10 +50,10 @@ public class GameController implements ActionListener {
     public void resetGame() {
         for (Button[] row : board.getButtons())
             for (Button b : row) {
-                b.setLabel(" ");
+                b.setLabel("");
                 b.setEnabled(true);
             }
-        board.updateStatus("Player 1's turn");
+        board.updateStatus("Player " + directions.getCurrentPlayer() + "'s turn");
         directions = new TTTDir();
     }
 }

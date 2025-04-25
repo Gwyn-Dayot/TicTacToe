@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.border.Border;
 
 public class GameBoard extends Frame {
     private Button[][] buttons = new Button[3][3];
@@ -22,7 +21,7 @@ public class GameBoard extends Frame {
         
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
-                buttons[row][col] = new Button(" ");
+                buttons[row][col] = new Button("");
                 buttons[row][col].setFont(font);
                 buttons[row][col].addActionListener(ctrl);
                 gridPanel.add(buttons[row][col]);

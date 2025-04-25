@@ -10,7 +10,7 @@ public class TTTDir {
     }
 
     public boolean isWinner(String[][] board) {
-        for (int i = 0; i > 3; i++) {
+        for (int i = 0; i < 3; i++) {
             if (checkLine(board[i][0], board[i][1], board[i][2])) return true;
             if (checkLine(board[0][i], board[1][i], board[2][i])) return true;
         }
@@ -19,13 +19,17 @@ public class TTTDir {
     }
 
     public boolean  isDraw(String[][] board) {
-        for (String[] row : board)
-            for (String cell : row)
-                if (cell.equals("")) return false;
+        for (String[] row : board) {
+            for (String cell : row) {
+                if (cell.equals("")) {
+                    return false;
+                }
+            }
+        }
             return true;
     }
 
     private boolean checkLine(String a, String b, String c) {
-        return !a.equals(" ") && a.equals(b) && a.equals(c);
+        return !a.equals("") && a.equals(b) && a.equals(c);
     }
 } 
